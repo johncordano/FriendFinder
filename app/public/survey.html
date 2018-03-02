@@ -11,12 +11,13 @@
 
 <body>
     <div class="container">
-        <!-- Survery form -->
+        <!-- Survey form header -->
         <h2>About You</h2>
         <h4>Name (Required)</h4>
         <input type="text" class="validate" id="name">
         <h4>Link to Photo (Required)</h4>
         <input type="text" class="validate" id="photo">
+        <!-- Survey form questions -->
         <h2>Survey Questions</h2>
         <h5>Q1: Your mind is always buzzing with unexplored ideas and plans.</h5>
         <select id="q1" class="validate">
@@ -112,52 +113,78 @@
         <hr>
         <button type="submit" class="btn btn-primary submit">Submit</button>
         <hr>
-        <!-- Footer -->
+        <!-- Page footer -->
         <footer class="footer">
             <div class="container">
                 <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/johncordano/friendfinder">GitHub Repo</a></p>
             </div>
         </footer>
     </div>
-</body>
-
-</html>
-<!--Handle how form data is sent to the server.-->
-<script type="text/javascript">
-// When the Submit button is clicked, process the form field data.
-$(".submit").on("click", function(event) {
-    event.preventDefault();
-    // Ensure no form fields are blank.
-    function validateInput() {
-        var formComplete = true;
-        $(".validate").each(function() {
-            if ($(this).val() === "") {
-                formComplete = false;
-            }
-        });
-        return formComplete
-    }
-    // If all form fields are complete, retrieve the form field data.
-    if (validateInput()) {
-        var newFriend = {
-            name: $("#name").val(),
-            photo: $("#photo").val(),
-            scores: [
-                $("#q1").val(),
-                $("#q2").val(),
-                $("#q3").val(),
-                $("#q4").val(),
-                $("#q5").val(),
-                $("#q6").val(),
-                $("#q7").val(),
-                $("#q8").val(),
-                $("#q9").val(),
-                $("#q10").val()
-            ]
+    <!-- Modal form. -->
+    <div id="results-modal" class="modal fade">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Best Match</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5 id="match-name"></h5>
+                    <img id="match-img" src="" alt="new match">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--Handle how form data is sent to the server.-->
+    <script type="text/javascript">
+    // When the Submit button is clicked, process the form field data.
+    $(".submit").on("click", function(event) {
+        event.preventDefault();
+        // Ensure no form fields are blank.
+        function validateInput() {
+            var formComplete = true;
+            $(".validate").each(function() {
+                if ($(this).val() === "") {
+                    formComplete = false;
+                }
+            });
+            return formComplete
+        }
+        // If all form fields are complete, retrieve the form field data.
+        if (validateInput()) {
+            var newFriend = {
+                name: $("#name").val(),
+                photo: $("#photo").val(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
+            };
+            // If form fields are blank, display the appropriate message.
+        } else {
+            alert("You must complete all form fields to submit the form.");
         };
-        console.log(newFriend);
         // Send a post request to the API, which runs the code in the apiRoutes.js file.
         $.post("/api/friends", newFriend, function(data) {
+            // Retrieve the result from the AJAX post to display the name and photo of the best match.
+            $("#match-name").text(data.name);
+            $("#match-img").attr("src", data.image);
+            // Show the modal with the best match.
+            $("#results-modal").modal("show");
             // Clear the form after submission.
             newFriend = {
                 name: $("#name").val(""),
@@ -175,11 +202,9 @@ $(".submit").on("click", function(event) {
                     $("#q10").val("")
                 ]
             };
-            console.log(newFriend)
         });
-    // If form fields are blank, display the appropriate message.
-    } else {
-        alert("You must complete all form fields to submit the form.");
-    }
-});
-</script>
+    });
+    </script>
+</body>
+
+</html>

@@ -7,7 +7,7 @@ var app = express();
 // Create a variable for the server port.
 var PORT = process.env.PORT || 3322;
 // Set up the express app to handle data parsing.
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Allow the server to access the route files.
 require("./app/routing/apiRoutes")(app);

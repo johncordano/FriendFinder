@@ -1,20 +1,164 @@
 var friendsArray = [
   {
-  "name":"Ahmed",
-  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "name":"Bill Roe",
+  "photo":"http://www.delfthapticslab.nl/wp-content/uploads/2014/03/photo_RoelK-100x100.jpg",
   "scores":[
       5,
       1,
-      4,
-      4,
-      5,
+      1,
+      1,
+      1,
       1,
       2,
       5,
       4,
       1
     ]
-  }
+  },
+  {
+  "name":"Mary Turner",
+  "photo":"https://media.licdn.com/mpr/mpr/shrink_100_100/p/1/005/019/16d/33d28e5.jpg",
+  "scores":[
+      2,
+      1,
+      4,
+      4,
+      5,
+      4,
+      2,
+      5,
+      4,
+      4
+    ]
+  },
+  {
+  "name":"John Maxwell",
+  "photo":"http://www.brown.edu/academics/applied-mathematics/sites/brown.edu.academics.applied-mathematics/files/images/Maxey%201_1.thumbnail.jpg",
+  "scores":[
+      5,
+      1,
+      2,
+      2,
+      5,
+      3,
+      2,
+      5,
+      2,
+      1
+    ]
+  },
+  {
+  "name":"Roger Hart",
+  "photo":"http://smc.neuralcorrelate.com/wp-content/uploads/2016/01/nick_s-100x100.jpg",
+  "scores":[
+      1,
+      4,
+      4,
+      4,
+      5,
+      5,
+      2,
+      5,
+      5,
+      1
+    ]
+  },
+  {
+  "name":"Frank Cummings",
+  "photo":"http://smc.neuralcorrelate.com/wp-content/uploads/2016/05/Robert_100x100-100x100.jpg",
+  "scores":[
+      5,
+      1,
+      4,
+      2,
+      5,
+      1,
+      2,
+      3,
+      4,
+      2
+    ]
+  },
+  {
+  "name":"Jane Smith",
+  "photo":"https://media-exp2.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAjfAAAAJDI4MGU0ODY3LWQ1MTMtNDVhNy05MDFmLWU5NTEwNzVkYTI2Mg.jpg",
+  "scores":[
+      5,
+      4,
+      4,
+      4,
+      3,
+      1,
+      5,
+      5,
+      4,
+      1
+    ]
+  },
+  {
+  "name":"Emily Gersema",
+  "photo":"https://news.usc.edu/files/2015/04/emily-gersema160x160-100x100.jpg",
+  "scores":[
+      5,
+      5,
+      5,
+      4,
+      5,
+      1,
+      5,
+      5,
+      4,
+      1
+    ]
+  },
+  {
+  "name":"Mabel Miller",
+  "photo":"http://birn.eu.com/wp-content/uploads/2017/05/natalija-ostojic-150-2-100x100.jpg",
+  "scores":[
+      5,
+      1,
+      3,
+      1,
+      4,
+      1,
+      2,
+      5,
+      4,
+      1
+    ]
+  },
+  {
+  "name":"Susan Jones",
+  "photo":"https://www.incimages.com/uploaded_files/image/100x100/Carolyn-Cutrone-800x800_31057.jpg",
+  "scores":[
+      1,
+      1,
+      4,
+      2,
+      5,
+      1,
+      2,
+      5,
+      1,
+      5
+    ]
+  },
+  {
+  "name":"Patty Stewart",
+  "photo":"https://media-exp2.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAPzAAAAJDljOWMyOGUwLTdhMzEtNDVhNi1hZjJkLTcwNjA0NjU2YjMzMw.jpg",
+  "scores":[
+      5,
+      1,
+      4,
+      3,
+      3,
+      1,
+      2,
+      5,
+      5,
+      1
+    ]
+  }  
 ];
 
 // Export the array so that it is accessible to other files using require.
