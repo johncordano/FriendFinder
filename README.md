@@ -12,6 +12,10 @@ The following image shows the window that is displayed after submitting the form
 
 ![Match image](images/match.png)
 
+The following image shows the message that is displayed when the user clicks the Submit button without completing all form fields.
+
+![Incomplete Fields image](images/incompleteFields.png)
+
 # Tools Used
 
 - JavaScript
